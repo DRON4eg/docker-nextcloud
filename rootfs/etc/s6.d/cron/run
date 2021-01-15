@@ -1,7 +1,7 @@
 #!/bin/sh
 
 while true; do
-  exec su-exec $UID:$GID /usr/local/bin/occ preview:pre-generate
+  su-exec $UID:$GID /usr/local/bin/occ preview:pre-generate
   php -d memory_limit=<CRON_MEMORY_LIMIT> -f /nextcloud/cron.php
   sleep <CRON_PERIOD>
 done
