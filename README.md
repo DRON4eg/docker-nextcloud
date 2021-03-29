@@ -6,6 +6,7 @@
 
 **Made for my own use. Irregular updates! This image is eventually intended as a base for your own Docker image. I cannot be responsible if you're using outdated Docker images.**
 
+   **NOT Relevant**
 ⚠️ **HSTS is not enforced anymore as of 25/03/21:** please consider configuring your reverse proxy proprerly to do that. It didn't make sens in the first place to enforce my settings (which were outdated anyway), and I'm sorry for that. Also if you don't know what HSTS settings are right for you, I strongly advise reading [this](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security).
 
 ### Features
