@@ -6,9 +6,11 @@
 
 **Made for my own use. Irregular updates! This image is eventually intended as a base for your own Docker image. I cannot be responsible if you're using outdated Docker images.**
 
+⚠️ **HSTS is not enforced anymore as of 25/03/21:** please consider configuring your reverse proxy proprerly to do that. It didn't make sens in the first place to enforce my settings (which were outdated anyway), and I'm sorry for that. Also if you don't know what HSTS settings are right for you, I strongly advise reading [this](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security).
+
 ### Features
 - Based on Alpine Linux.
-- Bundled with nginx and PHP 7.4 (wonderfall/nginx-php image).
+- Bundled with nginx and PHP 8.0 (wonderfall/nginx-php image).
 - Automatic installation using environment variables.
 - Package integrity (SHA512) and authenticity (PGP) checked during building process.
 - Data and apps persistence.
@@ -25,8 +27,8 @@ As many images from the time it was first made, this image follows the principle
 
 ### Tags
 - **latest** : latest stable version.
-- **20.0** : latest 20.0.x version (stable, recommended)
-- **19.0** : latest 19.0.x version (old stable)
+- **21.0** : latest 21.0.x version (stable, recommended)
+- **20.0** : latest 20.0.x version (old stable)
 
 Since this project should suit my needs, I'll only maintain the latest stable version available.
 
