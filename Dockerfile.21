@@ -14,8 +14,14 @@ ENV UID=991 GID=991 \
     DB_TYPE=sqlite3 \
     DOMAIN=localhost
 
+RUN mkdir -p /usr/src/php/ext/imagick; \
+ && curl -fsSL https://github.com/Imagick/imagick/archive/06116aa24b76edaf6b1693198f79e6c295eda8a9.tar.gz | tar xvz -C "/usr/src/php/ext/imagick" --strip 1; \
+ && docker-php-ext-install imagick; \
+
+RUN sleep 2h
+
 RUN apk -U upgrade \
- && apk add -t build-dependencies \
+ && apk add --no-cache -t build-dependencies \
     gnupg \
     tar \
     build-base \
@@ -25,7 +31,7 @@ RUN apk -U upgrade \
     libtool \
     samba-dev \
     imagemagick-dev \
- && apk add \
+ && apk add --no-cache \
     curl \
     libressl \
     ca-certificates \
@@ -37,11 +43,6 @@ RUN apk -U upgrade \
     smbclient \
     apcu \
     redis \
- && sleep 2h \
- #&& mkdir -p /usr/src/php/ext/imagick; \
- #&& curl -fsSL https://github.com/Imagick/imagick/archive/06116aa24b76edaf6b1693198f79e6c295eda8a9.tar.gz | tar xvz -C "/usr/src/php/ext/imagick" --strip 1; \
- #&& docker-php-ext-install imagick; \
- && sleep 2h \
  && echo "extension=smbclient.so" > /php/conf.d/smbclient.ini \
  && echo "extension=redis.so" > /php/conf.d/redis.ini \
  && echo "extension=imagick.so" > /php/conf.d/imagick.ini \
